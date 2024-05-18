@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cipher Tool</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Cipher Tool</h1>
+        <p>Encrypt and decrypt your text using various ciphers.</p>
+    </header>
+    
+    <div class="cipher-options">
+        <input type="radio" id="caesar" name="cipherType" value="caesar" checked>
+        <label for="caesar">Caesar Cipher</label>
+        
+        <input type="radio" id="atbash" name="cipherType" value="atbash">
+        <label for="atbash">Atbash Cipher</label>
+        
+        <input type="radio" id="rot13" name="cipherType" value="rot13">
+        <label for="rot13">ROT13 Cipher</label>
+        
+        <input type="radio" id="base64" name="cipherType" value="base64">
+        <label for="base64">Base64</label>
+    </div>
+
+    <textarea id="inputText" rows="4" cols="50" placeholder="Enter text to encrypt/decrypt"></textarea><br>
+    
+    <label for="shift">Shift for Caesar Cipher:</label>
+    <input type="number" id="shift" min="1" max="25" value="3"><br>
+    
+    <button onclick="encrypt()">Encrypt</button>
+    <button onclick="decrypt()">Decrypt</button><br>
+    <textarea id="outputText" rows="10" cols="800" placeholder="Result" readonly></textarea>
+
+    <div id="about">
+        <h2>About</h2>
+        <div id="caesar-about" class="cipher-about">
+            <h3>Caesar Cipher</h3>
+            <p>The Caesar cipher is a substitution cipher where each letter in the plaintext is shifted a certain number of places down or up the alphabet. For example, with a shift of 3, A would be replaced by D, B would become E, and so on.</p>
+        </div>
+        <div id="atbash-about" class="cipher-about">
+            <h3>Atbash Cipher</h3>
+            <p>The Atbash cipher is a substitution cipher where each letter in the plaintext is replaced by its reverse in the alphabet. For example, A becomes Z, B becomes Y, and so on.</p>
+        </div>
+        <div id="rot13-about" class="cipher-about">
+            <h3>ROT13 Cipher</h3>
+            <p>The ROT13 cipher is a special case of the Caesar cipher where each letter is shifted 13 places. It is its own inverse, meaning applying ROT13 twice will return the original text.</p>
+        </div>
+        <div id="base64-about" class="cipher-about">
+            <h3>Base64 Encoding</h3>
+            <p>Base64 is a method of encoding binary data into an ASCII string format. It is commonly used to encode data for transmission over text-based protocols, such as email attachments or storing data in URLs.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Cipher Tool. All rights reserved.</p>
+    </footer>
+
+    <script src="cipher_tool.js"></script>
+</body>
+</html>
